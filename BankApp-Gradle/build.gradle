@@ -1,0 +1,47 @@
+
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+//apply plugin: 'org.sonarqube'
+
+group = 'GradleApp'
+version = '0.0.1.SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+// In this section you declare where to find the dependencies of your project
+repositories {
+     maven { url 'http://repo.maven.apache.org/maven2' }
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+
+     testCompile 'junit:junit:4.12'
+     compile group: 'org.springframework', name: 'spring-core', version: '3.1.0.RELEASE'
+     compile 'org.mockito:mockito-all:1.10.19'
+}
+
+
+task wrapper(type: Wrapper){
+	gradleVersion = '3.0'
+}
+
+
+/*sonarqube {
+  properties {
+    property "sonar.projectName", "My Project Name"
+    property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+  }
+}
+*/
+
+
+
+
+
+
+
+
+
